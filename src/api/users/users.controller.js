@@ -7,7 +7,7 @@ const postNewUser = async (req, res, next) => {
     console.log(req.body);
     try {
         const newUser = new User(req.body);
-        const userDuplicate = await User.findOne({ userName: newUser.userName });
+        const userDuplicate = await User.findOne({ email: newUser.email });
         if (userDuplicate) {
             return next(setError(404, "Usuario existente"));
         }
