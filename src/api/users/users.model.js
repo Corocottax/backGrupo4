@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     age: { type: Number, trim: true, required: true},
     house: { type: String, trim: true, required: true},
     password: { type: String, trim: true, required: true },
-    phone: { type: String, trim: true, required: true }
+    phone: { type: String, trim: true, required: false }
 }, { timestamps: true, collection: 'users'})
 
 
