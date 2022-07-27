@@ -4,6 +4,7 @@ const cors = require('cors');
 const { setError } = require('./src/utils/error/error');
 const { connectDb } = require('./src/utils/db/db');
 const UserRoutes = require('./src/api/users/users.routes');
+const CharacterRoutes = require('./src/api/characters/characters.routes');
 
 const PORT = process.env.PORT || 8080
 
@@ -30,6 +31,7 @@ app.use(express.json({
 app.use(express.urlencoded({ limit: '5mb', extended: true }))
 
 app.use('/users', UserRoutes)
+app.use('/characters', CharacterRoutes)
 
 app.use('*', (req, res, next) => {
     return next(setError(404, 'Route not found'))

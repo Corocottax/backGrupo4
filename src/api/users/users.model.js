@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
     age: { type: String, trim: true, required: true},
     house: { type: String, trim: true, required: true},
     password: { type: String, trim: true, required: true },
-    phone: { type: String, trim: true, required: false }
+    phone: { type: String, trim: true, required: false },
+    character: { type: mongoose.Schema.Types.ObjectId, ref:"characters", trim: true, required: false}
 }, { timestamps: true, collection: 'users'})
 
 
